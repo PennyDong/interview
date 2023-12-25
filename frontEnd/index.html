@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+    
+</head>
+<body>
+    <!-- 容器順序會影響div的先後順序導致畫面呈現不同-->
+    <div class="menu">
+        <div>
+            <img class="personalPhoto" src="./image/IMG_2627.jpg">
+        </div>
+
+        <div class="m_font">Miller Dong</div>
+
+        <div class="select_list">
+            <ul>
+                <li><a href="javascript:void(0)" onclick="change_personal()">個人簡介</li>
+                <li><a href="javascript:void(0)" onclick="change_chat()">留言板</a></li>
+                <li><a href="javascript:void(0)" onclick="change_login()">會員登入系統</a></li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <div class="title">
+        <div>
+            <img  class="cake_photo" src="./image/IMG_6258.JPG"/>           
+        </div>
+        <div class="title_font">
+            <span>時間是不會等人的</span>
+            <span>時間一旦過了就不會回來</span>
+        </div>
+        <div class="title_font">
+            <span>與其猶豫不決</span>
+            <span>不如嘗試先踏出一步</span>
+        </div>
+
+        <div>
+            <img class="ocp_photo" src="./image/OCPJSE11.jpg">
+        </div>
+    </div>
+    
+    <div class="content">
+        
+        <img class="content_photo">
+    <!-- 個人簡介相關 -->
+        <div class="content_font">
+            <span>您好~~本人目前正在轉職軟體工程師的路途中，</span>
+            <span>原本是一位內場廚師，經過歲月的流逝，</span>
+            <span>發現當廚師是自己想要的，但陪伴家人的時間被剝奪了許多。</span>
+            <span>思考了許久後，決定轉職，</span>
+            <span>才踏上了成為軟體工程師的道路。</span> 
+                <br>
+            <span>個人介紹</span>
+            <span>學歷: 景文科技大學餐飲管理系</span>
+            <span>工作經歷:</span>
+                <span>現職:新加坡商蝦皮娛樂電商有線公司台灣分公司</span> 
+                <span>曾經:陽光皇后、杏子豬排、GB鮮釀啤酒、古拉爵</span>  
+            <span>工作相關技能:</span> 
+                <span>SpringBoot SpringMVC Spring JDBC AJAX </span>
+                <span>MySQL Hibernat Maven MyBatis JPA</span>
+                <span>JavaScript HTML CSS</span>
+                <span>以上都有接觸過與持續練習中</span>
+        </div>
+        <div>
+            <img class="ocpjp_photo" src="./image/OCPJP.jpg" >
+        </div>
+    
+    <!--會員登入系統相關-->
+        <div class="showLogin">
+            <div class="loginTable">
+                <div>會員登入</div>
+                帳號<div><input id="id-username" type="text" name="username"></div>
+                密碼<div><input id="id-password" type="password" name="password"></div>
+                <span><button onclick="handleLogin()">登入</button></span>
+                <span><button onclick="change_Register()">註冊</span>
+            </div>
+        </div>
+    
+        <div class="showSuccess">
+            <div>
+                歡迎使用會員功能，請選擇想要使用的功能
+            </div>
+            <div class="guessBox">
+                <a href="javascript:void(0)" onclick="guessNumber()">(1).猜數字</a>
+            </div>
+        </div>
+
+       <!-- 猜數字 --> 
+        <div class="showPlayGuess">
+            <div class="guessFont">
+                <p id="guessTitle">歡迎來到猜數字:1A2B</p>
+                <p id="guessTitle2">遊戲規則:</p>
+                <p>請在每個欄位中輸入0~9中，其中一個數字，四個數字不行重複。</p>
+                <p>當輸入的數字與答案數字相符並位置相吻合，會得到一個A</p>
+                <p>當輸入的數字與答案數字相符但位置並不相符，則會得到一個ˊB</p>
+                <p>
+                    每次送出答案會得到你猜的答案獲得幾A幾B，
+                </p>
+                <p>當獲得4A時，代表答對答案。</p>
+            </div>
+            <div class="playGuess">
+                <div>第一位數</div>
+                <input type="text" class="num" id="num1" name="num1">
+                <div>第二位數</div>
+                <input type="text" class="num" id="num2" name="num2">
+                <div>第三位數</div>
+                <input type="text" class="num" id="num3" name="num3">
+                <div>第四位數</div>
+                <input type="text" class="num" id="num4" name="num4">
+                <br>
+                <button onclick="submitGuess()">送出</button>
+                <button onclick="resetGuess()">清除</button>
+                <button onclick="resetPlay()">重新開始</button>
+            </div>
+            
+            <div id="gList" class="guessList"></div>
+            
+        </div>
+        
+        <!-- 註冊會員 -->
+            
+        <div class="showRegister">
+            <div>
+                會員註冊
+            </div>
+            <div>
+                姓名<input type="text" id="r-name" name="name"><br>
+                帳號<input type="text" id="r-username" name="username"><br>
+                密碼<input type="password" id="r-password" name="password"><br>
+                Email<input type="text" id="r-email" name="email"><br>
+                <div><button onclick="handleRegister()">送出</button></div>
+            </div>
+
+        </div>
+
+    <!-- 留言板 -->
+        <div class="showChat">
+            <div class="box">
+            <div class="chatBox">
+                <table>
+                    <th>
+                        <td align="center" colspan="2">我要留言</td>
+                    </th>
+                    <tr>
+                        <td>姓名</td>
+                        <td><input type="text" id="cName" name="name"></td>
+                    </tr>
+                    <tr>
+                        <td>選項</td>
+                        <td>
+                            <select id="cSubject" name="subject">
+                                <option value="">請選擇...</option>
+                                <option value="question">發問</option>
+                                <option value="sharp">分享</option>
+                                <option value="talk">閒聊</option>
+                            </select>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>內容</td>
+                        <td>
+                            <textarea id="cContent" name="content"  rows="10" cols="33">
+                            </textarea>   
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><button id="submitContent" onclick="submitContent()">送出</button></td>
+                    </tr>
+                </table>
+            </div>
+            
+                <div class="chatSubmitBox">  
+                        <div id="chatBoxName">留言板</div>
+                        <div id="chatList"></div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+       
+    
+
+
+    <script src="./changeLogin.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+</body>
+</html>

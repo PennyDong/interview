@@ -1,0 +1,341 @@
+@import './reset.css';
+.body{
+    overflow: hidden;
+    height: cover;
+    width: cover;
+}
+
+.title{
+    height: 170px;
+    width: 100%;
+    background-color:	#ffebcd; 
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    /*#72a7d3;*/
+     /* 避免內容溢出 */
+     overflow: hidden; 
+}
+
+.title .cake_photo{
+    /*影響title的div 與 cake_photo的div距離*/
+    margin: 25px 0px 0px 350px;
+    /*放圖片的容器大小*/
+    width:150px;
+    height:130px;
+    border-radius:80px;
+}
+
+.title .title_font{
+    font-size: 19px;
+    margin: 60px 0px -40px 140px;
+    font-family: Arial;
+    font-weight: bold;
+    flex: 1;
+}
+
+.title .title_font span{
+    /*讓span標籤底部多出10px的空白*/
+    margin-bottom: 10px;
+    /*讓單獨的span標籤佔據一行*/
+    display: block;
+    transform: rotate(10deg); /* 將每個 <span> 元素逆時針旋轉45度 */
+}
+
+.title .ocp_photo{
+    height: 140px;
+    width:300px;
+    border-radius:80px;
+    margin: 20px 0px 0px 0px;
+}
+
+.menu{
+    width: 300px;
+    height: 100vh;
+    background-color: #7C7C7C;
+    position: absolute; /* 加入絕對位置 */
+     /* 浮在content&title上面float: left;*/
+
+     /* 避免內容溢出 */
+     overflow: hidden; 
+     /*容器疊層的順序 數值越大代表順序越上面*/
+    z-index: 2;
+}
+
+.menu a{
+    text-decoration:none;
+    color:aliceblue;
+}
+
+.menu .personalPhoto{
+
+    background: url("../image/IMG_2627.jpg") no-repeat;
+    background: 40px auto;
+    width:120px;
+    height:140px;
+    border-radius:60px;
+    margin: 25px 0px 0px 50px;
+}
+
+.menu .m_font{
+    font-size: 25px;
+    margin: 0px 55px;
+    color:salmon;
+}
+
+.menu .select_list{
+    margin-top: 25px;
+    margin-left: 40px;
+}
+
+.menu .select_list ul li{
+    font-size: 1.4em;
+    color:aliceblue;
+    padding: 13px;
+    /*動畫時間*/
+    transition: 0.25s;
+}
+
+.menu ul li:hover{
+    background-color: #e29e9e;
+} 
+
+.content{
+    margin-left: 300px;
+    width: calc(100vw - 300);
+    /*calc 讓指定容器的大小-需要扣掉的大小*/
+    height: calc(100vh - 170px);
+    
+    margin-right: 0px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+}
+
+
+.content .content_photo{
+    background-image: url("../image/IMG_1172.png");
+    /*
+    背景透明度 1為不透明 0為完全透明
+    */
+    opacity:0.4;
+    
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    
+     /* 圖片大小符合視窗 */
+    background-size: cover;
+    /* 圖片不重複 */
+    background-repeat: no-repeat;
+    z-index:1;
+}
+
+
+
+.content .content_font{
+    padding:100px 0px 0px 150px;
+    position: absolute;
+    bottom: 30px;
+    z-index:2;
+}
+
+.content .content_font span{
+    font-weight: bolder;
+    font-size: 18px;
+    color:black;
+    margin-bottom: 10px;
+    
+    display: block;
+}
+
+.content .ocpjp_photo {
+    
+    width: 400px;
+    height: 250px;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    
+    /*距離設定邊的位置多少距離*/
+    right:200px;
+    bottom:150px;
+    position: absolute;
+    z-index: 2;
+    /*
+    
+   position: absolute;
+    
+    */
+    
+}
+
+.showLogin{
+    
+    Top:100px;
+    left: 400px;
+
+    z-index: 2;
+    position: absolute;
+    display:none;
+}
+
+.showLogin .loginTable{
+    width:"300px";
+    height:"400px";
+    font-family: Arial;
+    border:pink;
+}
+
+.showLogin .loginTable div{
+    margin-bottom: 10px;
+
+}
+
+.showSuccess{
+    Top:170px;
+    left:300px;
+    z-index: 2;
+    position: absolute;
+    display: none;
+}
+
+.showSuccess a{
+    text-decoration:none;
+    font-size: 30px;
+    font-weight: bolder;
+    color: #4169e1;
+}
+
+.showSuccess div{
+    left:30px;
+    margin-bottom: 50px;
+    
+    font-size: 25px;
+    font-weight: bolder;
+    color: #4169e1;
+}
+
+.showRegister{
+
+    Top:100px;
+    left: 400px;
+    z-index: 2;
+    position: absolute;
+    display: none;
+}
+
+.showChat{
+    display: none;
+    width: cover;
+    height: cover;
+}
+
+.showChat .box{
+    
+    left:200px;
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    overflow:hidden;
+    
+
+}
+
+.showChat .box .chatBox{
+    
+    font-size: 30px;
+    font-weight: bolder;
+    color:rgba(12, 151, 182, 0.728);
+    box-sizing: border-box; /* 考慮邊框和填充的寬度 */
+    
+}
+
+
+
+.showChat .box .chatBox table 
+input,select{
+    margin-top: 20px;
+    margin-bottom: 40px ;
+}
+
+#chatBoxName{
+    font-size:40px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.showChat .box .chatSubmitBox{
+    font-size: 20px;
+    font-weight: bolder;
+    color:rgba(12, 151, 182, 0.728);
+    box-sizing: border-box; /* 考慮邊框和填充的寬度 */
+    margin-left: 150px ;
+    width: 300px;
+
+}
+
+.showChat .box .chatSubmitBox div{
+    margin-bottom: 20px;
+    
+}
+
+.showChat .box .chatSubmitBox p{
+    margin-bottom: 10px;
+    
+}
+
+.showChat .box .chatSubmitBox #chatList{
+    height: 450px;
+    overflow: scroll;
+
+}
+
+.content .showPlayGuess{
+
+    z-index: 2;
+    position: absolute;
+    display: none;
+    
+    
+}
+.content .showPlayGuess .guessFont{
+    display: none;
+    left: 200px;
+    position: absolute;
+    width:500px;
+    
+}
+
+
+.content .showPlayGuess .playGuess{
+    left: 250px;
+    margin-top: 200px;
+    position: absolute;
+    display: none;
+}
+
+.content .showPlayGuess .guessList{
+    position: absolute;
+    display: none;
+    width: 200px;
+    height: 200px;
+    margin-top: 200px;
+    left:500px
+}
+
+.content .showPlayGuess .guessFont p{
+    margin-bottom: 10px;
+    
+}
+
+#guessTitle{
+    font-size: 25px;
+    font-weight: bolder;
+    color: darkslategray;
+}
+#guessTitle2{
+    font-size: 20px;
+}
+
+
+
